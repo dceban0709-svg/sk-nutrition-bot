@@ -3,7 +3,7 @@ import json
 import os
 from aiogram import Bot, Dispatcher, executor, types
 
-API_TOKEN = "8749841265:AAE5rTjLly5NqSa7ee0AeaOSwT31L1UdWDc"
+API_TOKEN = "8749841265:AAGqnsaVjsULD-FT8GqSv98Ipx5dFSf1Bkg"
 
 DATA_FILE = "user_data.json"
 
