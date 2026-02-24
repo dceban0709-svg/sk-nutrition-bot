@@ -120,3 +120,29 @@ async def handle_message(message: types.Message):
 
 if __name__ == "__main__":
     executor.start_polling(dp, skip_updates=True)
+# --- Админ-доступ и просмотр данных ---
+
+ADMIN_ID = 8519909049
+
+@dp.message_handler(commands=["data"])
+async def cmd_data(message: types.Message):
+    # Проверяем, что это админ
+    if message.from_user.id != ADMIN_ID:
+        await message.answer("У вас нет доступа.")
+        return
+
+    data = load_data()
+
+    if not data:
+        await message.answer("Данных пока нет.")
+        return
+
+    # Формируем текст для вывода
+    text = "📊 Анкеты пользователей:\n\n"
+    for uid, info in data.items():
+        text += f"ID: {uid}\n"
+        for k, v in info.items():
+            text += f"{k}: {v}\n"
+        text += "\n---\n\n"
+
+    await message.answer(text or "Нет данных.")
