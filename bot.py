@@ -3,7 +3,7 @@ import json
 import os
 from aiogram import Bot, Dispatcher, executor, types
 
-API_TOKEN = "ТВОЙ_ТОКЕН"  # <-- СЮДА вставь токен
+API_TOKEN = "8749841265:AAE5rTjLly5NqSa7ee0AeaOSwT31L1UdWDc"
 
 DATA_FILE = "user_data.json"
 
